@@ -1,0 +1,12 @@
+pod 'MJExtension', '~> 3.0.3'
+pod 'MJRefresh', '~> 3.0.1'
+pod 'SDWebImage', '~> 3.7.3'
+platform :ios, '7.0'
+pod "AFNetworking", "~> 2.0"
+pod 'SVProgressHUD'
+pod 'UMengSocial', '~> 4.3'
+platform :ios, '8.0'
+use_frameworks!
+target ‘XiaoRiZi’ do
+    pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+end

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ChoiceWeekTableViewCell" customModule="XiaoRiZi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="299"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zfm-MS-iq7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="230" id="ubJ-pB-0U0"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜气盈门，过大年" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1S-OD-yxA">
+                        <rect key="frame" x="15" y="230" width="305" height="34"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="IJU-E0-czm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="花艺,手作,有趣" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wll-Fq-qOg">
+                        <rect key="frame" x="15" y="264" width="93" height="35"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3h-kv-Pv2">
+                        <rect key="frame" x="215" y="263" width="100" height="36"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="R3h-kv-Pv2" secondAttribute="height" multiplier="25:9" id="1Wm-jc-IDx"/>
+                            <constraint firstAttribute="width" constant="100" id="7xN-aF-Lbt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <inset key="titleEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="喜欢" image="collect_1.png" backgroundImage="fsyzm.png">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="wll-Fq-qOg" firstAttribute="top" secondItem="L1S-OD-yxA" secondAttribute="bottom" id="1WW-Af-S9J"/>
+                    <constraint firstItem="wll-Fq-qOg" firstAttribute="leading" secondItem="L1S-OD-yxA" secondAttribute="leading" id="5TS-FU-OP7"/>
+                    <constraint firstItem="zfm-MS-iq7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BgX-OX-Lf4"/>
+                    <constraint firstAttribute="trailing" secondItem="R3h-kv-Pv2" secondAttribute="trailing" constant="5" id="Dk6-rc-WRe"/>
+                    <constraint firstAttribute="trailing" secondItem="L1S-OD-yxA" secondAttribute="trailing" id="E5N-NP-hc8"/>
+                    <constraint firstItem="L1S-OD-yxA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="K4d-iH-jLU"/>
+                    <constraint firstAttribute="bottom" secondItem="wll-Fq-qOg" secondAttribute="bottom" id="LXU-VC-9cc"/>
+                    <constraint firstItem="L1S-OD-yxA" firstAttribute="top" secondItem="zfm-MS-iq7" secondAttribute="bottom" id="MKf-Cl-MyF"/>
+                    <constraint firstAttribute="bottom" secondItem="R3h-kv-Pv2" secondAttribute="bottom" id="Rcq-d8-wCJ"/>
+                    <constraint firstItem="zfm-MS-iq7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SJy-2V-tiD"/>
+                    <constraint firstAttribute="trailing" secondItem="zfm-MS-iq7" secondAttribute="trailing" id="agM-rj-QsV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <point key="canvasLocation" x="317" y="211"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="collect_1.png" width="44" height="44"/>
+        <image name="fsyzm.png" width="100" height="36"/>
+    </resources>
+</document>
