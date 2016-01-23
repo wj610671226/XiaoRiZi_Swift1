@@ -8,43 +8,77 @@
 
 import UIKit
 
-class FindViewController: BaseViewController , UITableViewDataSource, UITableViewDelegate {
+class FindViewController: BaseViewController , UICollectionViewDelegate, UICollectionViewDataSource {
 
+    /// findCollectionView
+    private weak var findCollectionView: UICollectionView?
+    
+    /// collectionCellID
+    private let COLLECTION_CELLID: String = "FindCollectionViewCellID"
+    
+    /// collectionHeaderID
+    private let COLLECTION_HEADERID: String = "FindCollectionViewHeaderID"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       titleLabel.text = "发现"
-        
+        titleLabel.text = "发现"
+        view.backgroundColor = UIColor.init(red: 240 / 255.0, green: 240 / 255.0, blue: 240 / 255.0, alpha: 1)
         // 初始化界面
-//        initFindInterface()
+        initFindInterface()
     }
 
     // MARK: 初始化界面
     private func initFindInterface() {
         // 搜索框
-        let searchBar = SearchBarView(frame: CGRect(x: 0, y: 64, width: KmainScreenW, height: 40))
-//        searchBar.placeholder = "店名，地址"
+        let searchBar = SearchBarView(frame: CGRect(x: Kpadding, y: 74, width: KmainScreenW - 2 * Kpadding, height: 35))
         view.addSubview(searchBar)
         
-        // tabview
-        let findTableViewY = CGRectGetMaxY(searchBar.frame)
-        let findTableView = UITableView(frame: CGRect(x: 0, y: findTableViewY, width: KmainScreenW, height: KmainScreenH - findTableViewY - KTabBarHeight))
-//        findTableView.delegate = self
-//        findTableView.dataSource = self
-        view.addSubview(findTableView)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = Kpadding / 2
+        layout.minimumInteritemSpacing = 2 * Kpadding
+        let itemW = (KmainScreenW - 2 * Kpadding) / 3 - 1.0
+        let itemH: CGFloat = 150
+        layout.itemSize = CGSize(width: itemW, height: itemH)
+        layout.headerReferenceSize = CGSize(width: KmainScreenW, height: 250)
+
+        // collectionView
+        let collectionViewY: CGFloat = CGRectGetMaxY(searchBar.frame) + Kpadding
+        let collectionViewH: CGFloat = KmainScreenH - collectionViewY - KTabBarHeight
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: collectionViewY, width: KmainScreenW, height: collectionViewH), collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.whiteColor()
+        findCollectionView = collectionView
+        view.addSubview(collectionView)
+        
+        // 注册
+        collectionView.registerNib(UINib(nibName: "FindCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: COLLECTION_CELLID)
+        collectionView.registerClass(FindCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: COLLECTION_HEADERID)
     }
     
-    // MARK: UITableViewDataSource, UITableViewDelegate
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+    // MARK: UICollectionViewDelegate, UICollectionViewDataSource
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = FindTableViewCell.findTableView(tableView)
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(COLLECTION_CELLID, forIndexPath: indexPath) as? FindCollectionViewCell
         
-        // 设置模型
         
-        return cell
+        return cell!
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: COLLECTION_HEADERID, forIndexPath: indexPath)
+        headerView.backgroundColor = UIColor.redColor()
+        return headerView
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

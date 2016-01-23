@@ -111,15 +111,15 @@ class ChoiceWebViewController: UIViewController,WKNavigationDelegate {
         print("didCommitNavigation")
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.hidden = false
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.hidden = true
-    }
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.navigationBar.hidden = false
+//    }
+//    
+//    override func viewWillDisappear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.navigationBar.hidden = true
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

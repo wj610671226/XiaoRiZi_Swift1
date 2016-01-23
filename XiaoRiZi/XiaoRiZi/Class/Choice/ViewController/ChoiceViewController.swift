@@ -121,10 +121,10 @@ class ChoiceViewController: BaseViewController, UITableViewDataSource, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.hidden = true
-    }
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.navigationBar.hidden = true
+//    }
     
     /*
     // MARK: - Navigation

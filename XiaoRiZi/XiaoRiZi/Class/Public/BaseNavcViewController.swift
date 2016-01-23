@@ -22,7 +22,14 @@ class BaseNavcViewController: UINavigationController {
         if self.childViewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
         }
+        navigationBar.hidden = self.childViewControllers.count == 0
         super.pushViewController(viewController, animated: true)
+//        print("childViewControllers.count = \(self.childViewControllers.count)")
+    }
+    
+    override func popViewControllerAnimated(animated: Bool) -> UIViewController? {
+        navigationBar.hidden = self.childViewControllers.count == 2
+        return super.popViewControllerAnimated(animated)
     }
     
     override func didReceiveMemoryWarning() {

@@ -19,7 +19,6 @@ class MineViewController: BaseViewController {
     
     private func initMineNavc() {
         titleLabel.text = "我的"
-        
         leftItem.hidden = true
         
         // 设置按钮
@@ -29,7 +28,8 @@ class MineViewController: BaseViewController {
 
     // MARK: 点击设置按钮
     func processSettingItem() {
-        
+        let detailVC = UIStoryboard(name: "MineViewController", bundle: nil).instantiateViewControllerWithIdentifier("mineDetailVC")
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

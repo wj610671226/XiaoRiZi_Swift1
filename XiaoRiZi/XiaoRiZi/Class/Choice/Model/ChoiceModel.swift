@@ -9,23 +9,14 @@
 import UIKit
 
 /// 精选主页model
-class ChoiceListModel: NSObject {
+class ChoiceListModel: BaseModel {
     
  /// id
     var uid: String?
     
- /// tag
-    var tag: String?
-    
  /// 类型
     var theme_type: String?
-    
- /// 标题
-    var title: String?
-    
- /// 图片
-    var img: String?
-    
+
     /// 内容详细的url地址
     var theme_url: String?
 }
@@ -52,16 +43,9 @@ class ChoiceDetailModel : NSObject {
     }
 }
 
-class ArticleModel: NSObject {
-    /// 图片
-    var img: String?
-    
-    /// 标题
-    var title: String?
-    
+class ArticleModel: BaseModel {
+
     /// url地址
     var url: String?
-    
-     /// tag
-    var tag: String?
+
 }
