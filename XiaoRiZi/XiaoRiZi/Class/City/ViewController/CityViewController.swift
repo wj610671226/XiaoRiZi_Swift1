@@ -50,7 +50,7 @@ class CityViewController: BaseViewController , UICollectionViewDelegate, UIColle
         layout.itemSize = CGSize(width: KmainScreenW / 3.0 - 1.0, height: 50)
         layout.sectionInset = UIEdgeInsetsMake(cellPadding, 0, 0, 0)
         layout.headerReferenceSize = CGSize(width: KmainScreenW, height: 50)
-        
+
         let cityColletionView = UICollectionView(frame: CGRect(x: 0, y: KbackViewH, width: KmainScreenW, height: KmainScreenH - KbackViewH), collectionViewLayout: layout)
         cityColletionView.delegate = self
         cityColletionView.dataSource = self
@@ -61,6 +61,7 @@ class CityViewController: BaseViewController , UICollectionViewDelegate, UIColle
         // 注册cell
         cityColletionView.registerNib(UINib(nibName: "CityCollectionViewCell", bundle: nil
             ), forCellWithReuseIdentifier: cellID)
+        
         // 注册  UICollectionReusableView
         cityColletionView.registerClass(CityHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: cityHeaderID)
         cityColletionView.registerClass(CityFooterCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: cityFooterID)
@@ -99,12 +100,15 @@ class CityViewController: BaseViewController , UICollectionViewDelegate, UIColle
         return cell
     }
 
+    // UICollectionReusableView
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        // footerView
         if kind == UICollectionElementKindSectionFooter {
             let cityFooterView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionFooter, withReuseIdentifier: cityFooterID, forIndexPath: indexPath) as! CityFooterCollectionReusableView
             return cityFooterView
         }
         
+        // headerView
         let cityHeaderView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: cityHeaderID, forIndexPath: indexPath) as! CityHeaderCollectionReusableView
         if indexPath.section == 0 {
             cityHeaderView.headerLabel.text = "国内"

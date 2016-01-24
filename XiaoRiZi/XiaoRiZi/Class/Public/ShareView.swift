@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 typealias HiddenShareView = () -> Void
 
 class ShareView: UIView {
@@ -16,18 +17,15 @@ class ShareView: UIView {
     private var KanimtationTime: NSTimeInterval = 0.5
     
     var hiddenShareView: HiddenShareView?
-//    var hiddenCeShi:((hello: String, word: String) -> Void)?
+    
     // MARK: dismiss ShareView
     @IBAction func disMissShareView(sender: AnyObject) {
         disMissView()
         hiddenShareView!()
-        
-//        hiddenCeShi!(hello: "hell", word: "woo")
     }
 
     // MARK: 分享
     @IBAction func processShareBtn(sender: AnyObject) {
-
         print("还没有实现")
     }
     

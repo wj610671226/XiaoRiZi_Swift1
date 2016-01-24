@@ -11,7 +11,7 @@ import UIKit
 /**
  *  点击按钮的代理。进入对应的页面
  */
-protocol ChoiceDetailTableViewCellDelegate {
+protocol ChoiceDetailTableViewCellDelegate: class {
     /**
      进入详细页面
      
@@ -23,8 +23,8 @@ protocol ChoiceDetailTableViewCellDelegate {
 class ChoiceDetailTableViewCell: UITableViewCell {
 
     /// 代理
-    var delegate: ChoiceDetailTableViewCellDelegate?
-    
+    weak var delegate: ChoiceDetailTableViewCellDelegate?
+
     // 顶部的视图
     private var topView: ChoiceDetailTopView?
     

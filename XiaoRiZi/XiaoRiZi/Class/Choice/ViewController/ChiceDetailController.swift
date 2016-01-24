@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChiceDetailController: UIViewController , UITableViewDelegate, UITableViewDataSource, ChoiceDetailTableViewCellDelegate{
+class ChiceDetailController: UIViewController , UITableViewDelegate, UITableViewDataSource, ChoiceDetailTableViewCellDelegate {
 
     /// detailTableView
     weak var detailTableView: UITableView!
@@ -85,17 +85,7 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
         deatailVC.url = model.url
         navigationController?.pushViewController(deatailVC, animated: true)
     }
-    
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.navigationBar.hidden = false
-//    }
-//    
-//    override func viewWillDisappear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.navigationBar.hidden = true
-//    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

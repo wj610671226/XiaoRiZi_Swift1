@@ -63,10 +63,6 @@ class ChoiceWebViewController: UIViewController,WKNavigationDelegate {
                 print("hiddenShareView")
                 self.backView?.canalAlpha()
             }
-            
-//            shareView.hiddenCeShi = { (s1: String, s2: String) -> Void in
-//                print("s1 = \(s1), s2 = \(s2)")
-//            }
         }
         view.addSubview(self.shareView!)
         self.shareView?.showShareView()
