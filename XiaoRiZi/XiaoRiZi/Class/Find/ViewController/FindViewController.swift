@@ -19,12 +19,18 @@ class FindViewController: BaseViewController , UICollectionViewDelegate, UIColle
     /// collectionHeaderID
     private let COLLECTION_HEADERID: String = "FindCollectionViewHeaderID"
     
+    /// 数据源
+    private lazy var findDataSources: NSMutableArray = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = "发现"
         view.backgroundColor = UIColor.init(red: 240 / 255.0, green: 240 / 255.0, blue: 240 / 255.0, alpha: 1)
+        
         // 初始化界面
         initFindInterface()
+        
+        getFindData()
     }
 
     // MARK: 初始化界面
@@ -36,11 +42,12 @@ class FindViewController: BaseViewController , UICollectionViewDelegate, UIColle
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = Kpadding / 2
-        layout.minimumInteritemSpacing = 2 * Kpadding
+        layout.minimumInteritemSpacing = 0
         let itemW = (KmainScreenW - 2 * Kpadding) / 3 - 1.0
-        let itemH: CGFloat = 150
+        let itemH: CGFloat = 100
         layout.itemSize = CGSize(width: itemW, height: itemH)
         layout.headerReferenceSize = CGSize(width: KmainScreenW, height: 250)
+        layout.sectionInset = UIEdgeInsetsMake(Kpadding / 2, Kpadding / 2, Kpadding / 2, Kpadding / 2)
 
         // collectionView
         let collectionViewY: CGFloat = CGRectGetMaxY(searchBar.frame) + Kpadding
@@ -59,12 +66,17 @@ class FindViewController: BaseViewController , UICollectionViewDelegate, UIColle
     
     // MARK: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return findDataSources.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(COLLECTION_CELLID, forIndexPath: indexPath) as? FindCollectionViewCell
 
+        // 设置模型
+        if findDataSources.count > 0 {
+            cell?.model = findDataSources[indexPath.row] as? FindModel
+        }
+        
         return cell!
     }
     
@@ -78,6 +90,23 @@ class FindViewController: BaseViewController , UICollectionViewDelegate, UIColle
         return headerView
     }
     
+    
+    // MARK: 获取数据
+    private func getFindData() {
+        GetNetMessageTool.getLocalMessageWithJsonData("Find.json", successBlock: { (responseObject) -> Void in
+            print(responseObject)
+            // 转模型
+            
+            let jsonArray = responseObject["list"]!![0]["tags"]
+            let dataArray = FindModel.mj_objectArrayWithKeyValuesArray(jsonArray)
+            self.findDataSources.addObjectsFromArray(dataArray as [AnyObject])
+            
+            self.findCollectionView?.reloadData()
+            
+            }) { (errorMessage) -> Void in
+                print("error = \(errorMessage)")
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

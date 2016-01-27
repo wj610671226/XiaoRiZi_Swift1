@@ -33,8 +33,8 @@ class RootViewController: UITabBarController {
         addOneChildControlller(FindViewController(), title: "发现", normalImageName: "classification_1", selectedImage: "classification_2")
         
         // 我的
-//        let mineVC = UIStoryboard(name: "MineViewController", bundle: nil).instantiateViewControllerWithIdentifier("MineViewController") as! UITableViewController
-        addOneChildControlller(MineViewController(), title: "我的", normalImageName: "my_1", selectedImage: "my_2")
+        let mineVC = UIStoryboard(name: "MineViewController", bundle: nil).instantiateViewControllerWithIdentifier("MineViewController") as! UITableViewController
+        addOneChildControlller(mineVC, title: "我的", normalImageName: "my_1", selectedImage: "my_2")
     }
     
     // MARK: 添加一个控制器

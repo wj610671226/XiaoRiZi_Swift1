@@ -76,7 +76,6 @@ class ChoiceWebViewController: UIViewController,WKNavigationDelegate {
     
     // MARK: backView 的点击手势
     func processTopBackView() {
-        print("backView 的点击手势")
         // 改变 backView
         self.backView?.canalAlpha()
         // 隐藏 shareView
@@ -106,16 +105,6 @@ class ChoiceWebViewController: UIViewController,WKNavigationDelegate {
     func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation!) {
         print("didCommitNavigation")
     }
-    
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.navigationBar.hidden = false
-//    }
-//    
-//    override func viewWillDisappear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.navigationBar.hidden = true
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

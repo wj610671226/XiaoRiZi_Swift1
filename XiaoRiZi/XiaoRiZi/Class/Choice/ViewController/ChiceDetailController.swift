@@ -11,10 +11,13 @@ import UIKit
 class ChiceDetailController: UIViewController , UITableViewDelegate, UITableViewDataSource, ChoiceDetailTableViewCellDelegate {
 
     /// detailTableView
-    weak var detailTableView: UITableView!
+    private weak var detailTableView: UITableView!
     
     /// 数据源
     private lazy var dataSources: NSMutableArray = NSMutableArray()
+    
+    /// 判断显示的cell的类型
+    var cellType: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +37,6 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = KtopViewH + KbottomViewH * 2 + Kpadding
         tableView.separatorStyle = .None
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0)
         detailTableView = tableView
@@ -46,19 +48,83 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = ChoiceDetailTableViewCell.cellWithTableView(tableView, indexPath: indexPath)
+        switch cellType! {
+        case 0: // 每天cell
+            let cell = ChoiceDetailTableViewCell.cellWithTableView(tableView, indexPath: indexPath)
+            
+            if dataSources.count > 0 {
+                // 设置数据模型
+                cell.detailModel = dataSources[indexPath.row] as? ChoiceDetailModel
+            }
+            
+            // 设置代理
+            cell.delegate = self
+            
+            return cell
+        case 1: // 周末
+            let cell = ChoiceWeekTableViewCell.cellWithTableView(tableView)
+            
+            if dataSources.count > 0 {
+                cell.weekModel = dataSources[indexPath.row] as? WeekModel
+            }
+            
+            return cell
+        case 3: // 匠人志
+            let cell = ChoiceCraftsmenTableViewCell.cellWithTableView(tableView)
+            
+            if dataSources.count > 0 {
+                cell.model = dataSources[indexPath.row] as? CiaftsmenModel
+            }
+            
+            return cell
+        default:
+            return UITableViewCell()
+        }
         
-        // 设置数据模型
-        cell.detailModel = dataSources[indexPath.row] as? ChoiceDetailModel
-        
-        // 设置代理
-        cell.delegate = self
-        
-        return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch cellType! {
+        case 1:
+            print("meitian")
+        case 3:
+            let webVC = ChoiceWebViewController()
+            webVC.url = (dataSources[indexPath.row] as? CiaftsmenModel)?.url
+            navigationController?.pushViewController(webVC, animated: true)
+        default:
+            print("didSelectRowAtIndexPath")
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        switch cellType! {
+        case 0:
+            return KtopViewH + KbottomViewH * 2 + Kpadding
+        case 1:
+            return 300
+        case 3:
+            return 350
+        default:
+            return 0
+        }
+    }
     // MARK: 获取详细的数据
     private func getDetailmessage() {
+        dataSources.removeAllObjects()
+        switch cellType! {
+        case 0:
+            getBeautyDayMessage()
+        case 1:
+            getWeekMessage()
+        case 3:
+            getCraftsMessage()
+        default:
+            print("default")
+        }
+    }
+    
+    // 获取每天的数据
+    private func getBeautyDayMessage() {
         GetNetMessageTool.getLocalMessageWithJsonData("ChoiceDetail.json", successBlock: { (responseObject) -> Void in
             print("detail = \(responseObject)")
             ChoiceDetailModel.mj_setupObjectClassInArray({ () -> [NSObject : AnyObject]! in
@@ -68,8 +134,36 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
             
             self.dataSources.addObjectsFromArray(data as [AnyObject])
             
-            }) { (errorMessage) -> Void in
+        }) { (errorMessage) -> Void in
                 print("error = \(errorMessage)")
+        }
+    }
+    
+    // 获取周末的数据
+    private func getWeekMessage() {
+        GetNetMessageTool.getLocalMessageWithJsonData("Week.json", successBlock: { (responseObject) -> Void in
+            print("获取周末的数据 = \(responseObject)")
+            // 转模型
+            let dataArray = WeekModel.mj_objectArrayWithKeyValuesArray(responseObject["list"])
+            self.dataSources.addObjectsFromArray(dataArray as [AnyObject])
+            
+            self.detailTableView.reloadData()
+        }) { (errorMessage) -> Void in
+                print("获取周末的数据 = \(errorMessage)")
+        }
+    }
+    
+    // 获取匠人的数据
+    private func getCraftsMessage() {
+        GetNetMessageTool.getLocalMessageWithJsonData("Craftsmen.json", successBlock: { (responseObject) -> Void in
+            print("获取匠人的数据 = \(responseObject)")
+            // 转模型
+            let dataArray = CiaftsmenModel.mj_objectArrayWithKeyValuesArray(responseObject["list"])
+            self.dataSources.addObjectsFromArray(dataArray as [AnyObject])
+            
+            self.detailTableView.reloadData()
+        }) { (errorMessage) -> Void in
+                print("获取匠人的数据 = \(errorMessage)")
         }
     }
     

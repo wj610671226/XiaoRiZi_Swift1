@@ -16,6 +16,7 @@ class BaseNavcViewController: UINavigationController {
         
         // 设置主题se
         navcBar.tintColor = UIColor.blackColor()
+        navcBar.barTintColor = UIColor.lightGrayColor()
     }
 
     override func pushViewController(viewController: UIViewController, animated: Bool) {
@@ -24,7 +25,6 @@ class BaseNavcViewController: UINavigationController {
         }
         navigationBar.hidden = self.childViewControllers.count == 0
         super.pushViewController(viewController, animated: true)
-//        print("childViewControllers.count = \(self.childViewControllers.count)")
     }
     
     override func popViewControllerAnimated(animated: Bool) -> UIViewController? {

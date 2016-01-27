@@ -51,3 +51,7 @@ let WXUrl: String = "http://www.umeng.com/social"
 let SinaAppKey: String = "217002366"
 let SinaAppSecret: String = "89cdaeebe2492ca9e3a0df8d09a29e66"
 let SinaUrl: String = "http://sns.whalecloud.com/sina2/callback"
+
+ /// 4S 和其他尺寸的比例
+let KScaleH: CGFloat = KmainScreenH / 480
+let KScaleW: CGFloat = KmainScreenW / 320

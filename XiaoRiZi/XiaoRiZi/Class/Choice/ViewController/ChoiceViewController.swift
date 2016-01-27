@@ -74,7 +74,9 @@ class ChoiceViewController: BaseViewController, UITableViewDataSource, UITableVi
             (detailVC as! ChoiceWebViewController).url = model.theme_url
             (detailVC as! ChoiceWebViewController).isCollection = false
         } else {
+            // 进入  每天、匠人、周末页面
             detailVC = ChiceDetailController()
+            (detailVC as! ChiceDetailController).cellType = indexPath.row
             detailVC?.title = model.title
         }
         navigationController?.pushViewController(detailVC!, animated: true)

@@ -21,7 +21,7 @@ class ChoiceListModel: BaseModel {
     var theme_url: String?
 }
 
-/// 精选详细页model
+/// 精选  每天 model
 class ChoiceDetailModel : NSObject {
     /// 日期
     var date: String?
@@ -47,5 +47,22 @@ class ArticleModel: BaseModel {
 
     /// url地址
     var url: String?
+}
 
+/// 匠人.志  model
+class CiaftsmenModel: BaseModel {
+    /// 名字
+    var name: String?
+    /// 头像
+    var head_photo: String?
+    /// 工作室
+    var workroom: String?
+    /// url地址
+    var url: String?
+}
+
+/// 周末，好玩的 model
+class WeekModel: BaseModel {
+    /// 图片数组
+    var imgs: [String]?
 }

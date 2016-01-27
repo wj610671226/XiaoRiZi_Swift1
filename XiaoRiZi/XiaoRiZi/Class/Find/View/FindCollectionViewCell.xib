@@ -8,22 +8,22 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FindCollectionViewCellID" id="gTV-IL-0wX" customClass="FindCollectionViewCell" customModule="XiaoRiZi" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="184" height="96"/>
+            <rect key="frame" x="0.0" y="0.0" width="184" height="106"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="184" height="96"/>
+                <rect key="frame" x="0.0" y="0.0" width="184" height="106"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aaQ-Ta-hcc">
-                        <rect key="frame" x="0.0" y="0.0" width="184" height="76"/>
-                        <animations/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uml-Ce-4fj">
-                        <rect key="frame" x="0.0" y="76" width="184" height="20"/>
+                        <rect key="frame" x="0.0" y="83" width="184" height="23"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aaQ-Ta-hcc">
+                        <rect key="frame" x="0.0" y="0.0" width="184" height="83"/>
+                        <animations/>
+                    </imageView>
                 </subviews>
                 <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -32,7 +32,7 @@
             <constraints>
                 <constraint firstItem="Uml-Ce-4fj" firstAttribute="top" secondItem="aaQ-Ta-hcc" secondAttribute="bottom" id="Hz9-yD-RVn"/>
                 <constraint firstAttribute="trailing" secondItem="aaQ-Ta-hcc" secondAttribute="trailing" id="Mdi-vX-bn9"/>
-                <constraint firstAttribute="bottom" secondItem="aaQ-Ta-hcc" secondAttribute="bottom" constant="20" id="Te8-Rg-Gfh"/>
+                <constraint firstAttribute="bottom" secondItem="aaQ-Ta-hcc" secondAttribute="bottom" constant="23" id="Te8-Rg-Gfh"/>
                 <constraint firstItem="aaQ-Ta-hcc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aAw-Ce-AUB"/>
                 <constraint firstAttribute="bottom" secondItem="Uml-Ce-4fj" secondAttribute="bottom" id="ibC-N6-ZgL"/>
                 <constraint firstItem="aaQ-Ta-hcc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pYK-Yh-wKl"/>
