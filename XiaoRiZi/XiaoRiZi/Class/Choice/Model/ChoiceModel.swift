@@ -66,3 +66,10 @@ class WeekModel: BaseModel {
     /// 图片数组
     var imgs: [String]?
 }
+
+class WeekHeadModel: NSObject {
+     /// 图片地址
+    var adurl: String?
+     /// 详细地址
+    var mobileURL: String?
+}

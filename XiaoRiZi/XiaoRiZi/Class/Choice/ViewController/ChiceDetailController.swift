@@ -19,6 +19,9 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
     /// 判断显示的cell的类型
     var cellType: Int?
     
+    /// 头部视图的模型数组
+    private lazy var headerModelArray: NSMutableArray = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
@@ -148,6 +151,13 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
             self.dataSources.addObjectsFromArray(dataArray as [AnyObject])
             
             self.detailTableView.reloadData()
+            
+            // 头部视图转模型
+            let modelArray = WeekHeadModel.mj_objectArrayWithKeyValuesArray(responseObject["head"])
+            self.headerModelArray.addObjectsFromArray(modelArray as [AnyObject])
+            
+            // 添加头部视图
+            self.addHeaderView()
         }) { (errorMessage) -> Void in
                 print("获取周末的数据 = \(errorMessage)")
         }
@@ -180,6 +190,20 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
         navigationController?.pushViewController(deatailVC, animated: true)
     }
 
+    // MARK: 添加头部视图
+    private func addHeaderView() {
+        let headerView = WJScrollView(frame: CGRect(x: 0, y: 0, width: KmainScreenW, height: 150))
+        detailTableView.tableHeaderView = headerView
+        
+        // 给头部视图设置图片数组
+        var imageArray: [String] = Array()
+        for obj in self.headerModelArray {
+            let model = obj as! WeekHeadModel
+            imageArray.append(model.adurl!)
+        }
+        headerView.imageNames = imageArray
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

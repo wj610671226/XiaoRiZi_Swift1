@@ -74,6 +74,12 @@
 		1039D0E01C4F1C4A00F780C6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1039D0DC1C4F1C4A00F780C6 /* Default@2x.png */; };
 		1039D0E21C4F200700F780C6 /* Explore.json in Resources */ = {isa = PBXBuildFile; fileRef = 1039D0E11C4F200700F780C6 /* Explore.json */; };
 		1039D0E81C4F607700F780C6 /* extensionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039D0E71C4F607700F780C6 /* extensionTool.swift */; };
+		1065D5411C586428000B79FF /* slide_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1065D53D1C586428000B79FF /* slide_2@3x.png */; };
+		1065D5421C586428000B79FF /* slide_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1065D53E1C586428000B79FF /* slide_2@2x.png */; };
+		1065D5431C586428000B79FF /* slide_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1065D53F1C586428000B79FF /* slide_1@3x.png */; };
+		1065D5441C586428000B79FF /* slide_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1065D5401C586428000B79FF /* slide_1@2x.png */; };
+		1065D5461C58652A000B79FF /* WJPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1065D5451C58652A000B79FF /* WJPageControl.swift */; };
+		1065D54A1C58AB0A000B79FF /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1065D5491C58AB0A000B79FF /* BaseButton.swift */; };
 		107C039C1C4781AE0028CAC6 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C039B1C4781AE0028CAC6 /* FindViewController.swift */; };
 		107C039F1C4781D50028CAC6 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C039E1C4781D50028CAC6 /* ChoiceViewController.swift */; };
 		108212991C53191200ABB0F4 /* ExploreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108212981C53191200ABB0F4 /* ExploreModel.swift */; };
@@ -221,6 +227,12 @@
 		1039D0DC1C4F1C4A00F780C6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1039D0E11C4F200700F780C6 /* Explore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Explore.json; sourceTree = "<group>"; };
 		1039D0E71C4F607700F780C6 /* extensionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionTool.swift; sourceTree = "<group>"; };
+		1065D53D1C586428000B79FF /* slide_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slide_2@3x.png"; sourceTree = "<group>"; };
+		1065D53E1C586428000B79FF /* slide_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slide_2@2x.png"; sourceTree = "<group>"; };
+		1065D53F1C586428000B79FF /* slide_1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slide_1@3x.png"; sourceTree = "<group>"; };
+		1065D5401C586428000B79FF /* slide_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slide_1@2x.png"; sourceTree = "<group>"; };
+		1065D5451C58652A000B79FF /* WJPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WJPageControl.swift; sourceTree = "<group>"; };
+		1065D5491C58AB0A000B79FF /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		107C039B1C4781AE0028CAC6 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		107C039E1C4781D50028CAC6 /* ChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 		108212981C53191200ABB0F4 /* ExploreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreModel.swift; sourceTree = "<group>"; };
@@ -346,6 +358,10 @@
 				10296CBA1C50D19400B4286E /* mybackground@2x.png */,
 				10296CBB1C50D19400B4286E /* mybackground@3x.png */,
 				10296C7C1C50CF9400B4286E /* back_0@2x.png */,
+				1065D53D1C586428000B79FF /* slide_2@3x.png */,
+				1065D53E1C586428000B79FF /* slide_2@2x.png */,
+				1065D53F1C586428000B79FF /* slide_1@3x.png */,
+				1065D5401C586428000B79FF /* slide_1@2x.png */,
 				10296C7D1C50CF9400B4286E /* back_0@3x.png */,
 				10296C7E1C50CF9400B4286E /* back_1@2x.png */,
 				10296C7F1C50CF9400B4286E /* back_1@3x.png */,
@@ -431,6 +447,7 @@
 				10296CB61C50D0DA00B4286E /* ChoiceCraftsmenTableViewCell.swift */,
 				10296CB71C50D0DA00B4286E /* ChoiceCraftsmenTableViewCell.xib */,
 				10128B471C576D72000B361C /* WJScrollView.swift */,
+				1065D5451C58652A000B79FF /* WJPageControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -723,6 +740,7 @@
 				101266641C50ABB300C9315C /* BackView.swift */,
 				10CAB9501C520AB4004DE35E /* XiaoRiZi-Bridging-Header.h */,
 				1082129A1C531AD600ABB0F4 /* BaseModel.swift */,
+				1065D5491C58AB0A000B79FF /* BaseButton.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -837,6 +855,7 @@
 				10296CC91C50DA8000B4286E /* date@3x.png in Resources */,
 				10296CA31C50CF9500B4286E /* collect_2@2x.png in Resources */,
 				10296CA01C50CF9500B4286E /* collect_0@3x.png in Resources */,
+				1065D5431C586428000B79FF /* slide_1@3x.png in Resources */,
 				108212D11C53681100ABB0F4 /* message@3x.png in Resources */,
 				10296C9E1C50CF9500B4286E /* back_2@3x.png in Resources */,
 				108212D31C53681100ABB0F4 /* message@2x.png in Resources */,
@@ -860,15 +879,18 @@
 				108212EA1C53880000ABB0F4 /* go@3x.png in Resources */,
 				108212DB1C53684500ABB0F4 /* logo_s@2x.png in Resources */,
 				10296CA51C50CF9500B4286E /* home_down@2x.png in Resources */,
+				1065D5421C586428000B79FF /* slide_2@2x.png in Resources */,
 				10296CA91C50CF9500B4286E /* search_2@2x.png in Resources */,
 				108212D01C53681100ABB0F4 /* mebackground@3x.jpg in Resources */,
 				108212C41C5362CB00ABB0F4 /* listlikedi@2x.png in Resources */,
 				1039D0DF1C4F1C4A00F780C6 /* Default-568h@2x.png in Resources */,
 				10296CA11C50CF9500B4286E /* collect_1@2x.png in Resources */,
+				1065D5441C586428000B79FF /* slide_1@2x.png in Resources */,
 				101266601C507CF800C9315C /* fsyzm@2x.png in Resources */,
 				108212C61C5362CB00ABB0F4 /* participate_2@2x.png in Resources */,
 				1039D0E21C4F200700F780C6 /* Explore.json in Resources */,
 				1012666F1C50C5BF00C9315C /* LiveCurrentWeek.json in Resources */,
+				1065D5411C586428000B79FF /* slide_2@3x.png in Resources */,
 				108212DC1C53684500ABB0F4 /* logo_m@3x.png in Resources */,
 				108212C31C5362CB00ABB0F4 /* listlikedi@3x.png in Resources */,
 				101266711C50C64500C9315C /* Craftsmen.json in Resources */,
@@ -972,6 +994,7 @@
 				107C039F1C4781D50028CAC6 /* ChoiceViewController.swift in Sources */,
 				109573BA1C48DF350088C500 /* ChoiceTableViewCell.swift in Sources */,
 				10F5ABCB1C4E364C00A92962 /* ChoiceDetailBottomView.swift in Sources */,
+				1065D5461C58652A000B79FF /* WJPageControl.swift in Sources */,
 				10C002D11C4678B8002ED5FE /* RootViewController.swift in Sources */,
 				109C7CDB1C4B2AD00085C7A2 /* CityCollectionViewCell.swift in Sources */,
 				10296CB81C50D0DA00B4286E /* ChoiceCraftsmenTableViewCell.swift in Sources */,
@@ -992,6 +1015,7 @@
 				107C039C1C4781AE0028CAC6 /* FindViewController.swift in Sources */,
 				10F5ABBB1C4DE0C700A92962 /* SaveMessageTool.swift in Sources */,
 				102CB1E81C4DD0BF00AC6326 /* XLPlainFlowLayout.m in Sources */,
+				1065D54A1C58AB0A000B79FF /* BaseButton.swift in Sources */,
 				10C002E21C468C28002ED5FE /* BaseNavcViewController.swift in Sources */,
 				1039D0D51C4F186C00F780C6 /* SearchBarView.swift in Sources */,
 				109573BC1C48E8AE0088C500 /* ChoiceModel.swift in Sources */,

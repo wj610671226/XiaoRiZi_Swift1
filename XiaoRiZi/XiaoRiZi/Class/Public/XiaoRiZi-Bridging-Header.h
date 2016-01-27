@@ -7,6 +7,7 @@
 #import <MJExtension/MJExtension.h>
 #import <MJRefresh/MJRefresh.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/UIButton+WebCache.h>
 #import "XLPlainFlowLayout.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "UMSocial.h"
