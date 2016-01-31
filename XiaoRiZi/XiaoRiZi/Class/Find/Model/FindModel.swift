@@ -14,3 +14,12 @@ class FindModel: NSObject {
      /// 图片
     var img: String?
 }
+
+class FindItemModel: NSObject {
+    /// 标题
+    var title: String?
+    /// 图片
+    var img: String?
+    /// 地址
+    var address: String?
+}

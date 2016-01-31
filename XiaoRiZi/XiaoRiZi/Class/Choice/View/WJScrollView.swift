@@ -13,7 +13,7 @@ import UIKit
      
      - parameter btnTag: 按钮的tag值
      */
-    func processScorllViewButton(btnTag: Int)
+   optional func processScorllViewButton(btnTag: Int)
 }
 
 class WJScrollView: UIView, UIScrollViewDelegate {
@@ -22,8 +22,9 @@ class WJScrollView: UIView, UIScrollViewDelegate {
     private var priScrollView: UIScrollView?
     
     /// 点击图片的代理
-    weak var clickDelegate: WJScorllViewDelegate?
+    weak var delegate: WJScorllViewDelegate?
     
+    /// pageControl
     weak var pageControl: WJPageControl?
     
     /// 存储图片名的数组
@@ -63,8 +64,9 @@ class WJScrollView: UIView, UIScrollViewDelegate {
         
         for var index = 0; index < imageNames!.count; index++  {
             let btn = BaseButton(frame: CGRect(x: CGFloat(index) * KmainScreenW, y: 0, width: KmainScreenW, height: priScrollView!.bounds.height))
-            btn.sd_setImageWithURL(NSURL(string: imageNames![index]), forState: .Normal)
+            btn.downLoadBackgroundImage(imageNames![index], state: .Normal)
             btn.addTarget(self, action: "processBtn:", forControlEvents: .TouchDown)
+            btn.tag = index
             priScrollView?.addSubview(btn)
         }
         
@@ -85,17 +87,19 @@ class WJScrollView: UIView, UIScrollViewDelegate {
     
     // MARK: scrollViewDelegate
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        print(scrollView.contentOffset.x)
-        if scrollView.contentOffset.x >= KmainScreenW {
-            pageControl?.currentPage++
-        } else {
-            pageControl?.currentPage--
-        }
+        // 取出水平方向上滚动的距离
+        let offsetX: CGFloat = scrollView.contentOffset.x
+        
+        // 求出页码
+        let pageDouble: CGFloat = offsetX / KmainScreenW
+        let pageInt: Int = Int(pageDouble + 0.5)
+        pageControl!.currentPage = pageInt
     }
     
     // MARK: processBtn
     func processBtn(sender: UIButton) {
         print("processBtn = \(sender)")
+        delegate?.processScorllViewButton!(sender.tag)
     }
     
     required init?(coder aDecoder: NSCoder) {

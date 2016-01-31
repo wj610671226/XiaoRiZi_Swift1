@@ -18,7 +18,26 @@ class ExploreTableViewCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     /// 关键字
     @IBOutlet weak var dayWordLabel: UILabel!
+    /// 月
+    @IBOutlet weak var monthLabel: UILabel!
+    /// 日
+    @IBOutlet weak var dayLabel: UILabel!
     
+    var model: ExploreModel? {
+        didSet {
+            let shop = (model?.shops?[0])! as ShopsModel
+            img.downLoadImage(shop.img!)
+            titleLabel.text = shop.title ?? ""
+            addressLabel.text = shop.address ?? ""
+            dayWordLabel.text = model?.day_word ?? ""
+            monthLabel.text = model?.month
+            dayLabel.text = model?.day
+        }
+    }
+    
+    /**
+     创建cell
+     */
     static func cellWithTableView(tableView: UITableView) -> ExploreTableViewCell {
         let cellID = "exploreCellID"
         var cell = tableView.dequeueReusableCellWithIdentifier(cellID) as? ExploreTableViewCell

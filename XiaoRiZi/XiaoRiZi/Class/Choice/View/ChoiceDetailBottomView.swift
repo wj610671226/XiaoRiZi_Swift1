@@ -23,7 +23,7 @@ class ChoiceDetailBottomView: UIButton {
         didSet {
             titleLbl?.text = model?.title
             tagLbl?.text = "文." + (model?.tag)!
-            img?.sd_setImageWithURL(NSURL(string: (model?.img)!))
+            img?.downLoadImage((model?.img)!)
             
             
             // 调整子视图的位置

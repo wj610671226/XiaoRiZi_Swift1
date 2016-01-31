@@ -21,7 +21,7 @@ class ChoiceDetailTopView: UIButton {
     
     var model: ArticleModel? {
         didSet {
-            img?.sd_setImageWithURL(NSURL(string: (model?.img)!))
+            img?.downLoadImage((model?.img)!)
             titleLeb?.text = model?.title
         }
     }

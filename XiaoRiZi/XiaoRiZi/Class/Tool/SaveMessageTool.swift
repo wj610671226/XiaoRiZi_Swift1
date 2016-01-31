@@ -10,25 +10,27 @@ import UIKit
 
 class SaveMessageTool: NSObject {
     
+    private static let defaults = NSUserDefaults.standardUserDefaults()
+    
     /**
-     保存当前的城市
+     保存信息
      
-     - parameter cityName: 城市名字
+     - parameter key:    key
+     - parameter object: value
      */
-    static func saveCurrentCityMessage(cityName: String) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(cityName, forKey: KCityKey)
+    static func saveMessage(key: String,object: AnyObject) {
+        defaults.setObject(object, forKey: key)
         defaults.synchronize()
     }
     
     /**
-     读取当前城市
+     读取信息
      
      - parameter key: key
      
-     - returns: 城市名字
+     - returns: value
      */
-    static func readeCurrentCityMessage(key: String) -> String{
-        return (NSUserDefaults.standardUserDefaults().objectForKey(key) as? String) ?? "北京"
+    static func readeMessage(key: String) -> AnyObject? {
+        return defaults.objectForKey(key)
     }
 }

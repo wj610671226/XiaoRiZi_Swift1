@@ -21,7 +21,7 @@ class ChoiceWeekTableViewCell: UITableViewCell {
     
     var weekModel: WeekModel? {
         didSet {
-            imgView.sd_setImageWithURL(NSURL(string: (weekModel?.imgs![0])!))
+            imgView.downLoadImage((weekModel?.imgs![0])!)
             titleLabel.text = weekModel?.title
             tagLabel.text = weekModel?.tag
         }

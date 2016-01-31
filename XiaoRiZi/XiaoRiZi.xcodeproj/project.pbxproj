@@ -25,6 +25,12 @@
 		101266761C50CA7100C9315C /* ChoiceWeekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101266741C50CA7100C9315C /* ChoiceWeekTableViewCell.swift */; };
 		101266771C50CA7100C9315C /* ChoiceWeekTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 101266751C50CA7100C9315C /* ChoiceWeekTableViewCell.xib */; };
 		10128B481C576D72000B361C /* WJScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10128B471C576D72000B361C /* WJScrollView.swift */; };
+		102590C21C5C518A00B68FD1 /* ThemesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102590C01C5C518A00B68FD1 /* ThemesTableViewCell.swift */; };
+		102590C31C5C518A00B68FD1 /* ThemesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 102590C11C5C518A00B68FD1 /* ThemesTableViewCell.xib */; };
+		102590C61C5CB06400B68FD1 /* FindItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102590C41C5CB06400B68FD1 /* FindItemDetailViewController.swift */; };
+		102590CA1C5CB1EB00B68FD1 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102590C81C5CB1EB00B68FD1 /* ItemTableViewCell.swift */; };
+		102590CB1C5CB1EB00B68FD1 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 102590C91C5CB1EB00B68FD1 /* ItemTableViewCell.xib */; };
+		102590CD1C5CB44A00B68FD1 /* FindItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 102590CC1C5CB44A00B68FD1 /* FindItem.json */; };
 		10296C991C50CF9500B4286E /* back_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10296C7C1C50CF9400B4286E /* back_0@2x.png */; };
 		10296C9A1C50CF9500B4286E /* back_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10296C7D1C50CF9400B4286E /* back_0@3x.png */; };
 		10296C9B1C50CF9500B4286E /* back_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10296C7E1C50CF9400B4286E /* back_1@2x.png */; };
@@ -137,6 +143,8 @@
 		10C002DB1C4682A3002ED5FE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C002DA1C4682A3002ED5FE /* BaseViewController.swift */; };
 		10C002DD1C468435002ED5FE /* WJCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C002DC1C468435002ED5FE /* WJCommon.swift */; };
 		10C002E21C468C28002ED5FE /* BaseNavcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C002E11C468C28002ED5FE /* BaseNavcViewController.swift */; };
+		10C952171C5DA54A0049D849 /* WJRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C952161C5DA54A0049D849 /* WJRefreshHeader.swift */; };
+		10C952191C5DDE2E0049D849 /* WJFileTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C952181C5DDE2E0049D849 /* WJFileTool.swift */; };
 		10CAB9081C5208BE004DE35E /* Choice.json in Resources */ = {isa = PBXBuildFile; fileRef = 10CAB9071C5208BE004DE35E /* Choice.json */; };
 		10CABB801C52269C004DE35E /* FindCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CABB7E1C52269C004DE35E /* FindCollectionViewCell.swift */; };
 		10CABB811C52269C004DE35E /* FindCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10CABB7F1C52269C004DE35E /* FindCollectionViewCell.xib */; };
@@ -177,6 +185,12 @@
 		101266741C50CA7100C9315C /* ChoiceWeekTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceWeekTableViewCell.swift; sourceTree = "<group>"; };
 		101266751C50CA7100C9315C /* ChoiceWeekTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChoiceWeekTableViewCell.xib; sourceTree = "<group>"; };
 		10128B471C576D72000B361C /* WJScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WJScrollView.swift; sourceTree = "<group>"; };
+		102590C01C5C518A00B68FD1 /* ThemesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemesTableViewCell.swift; sourceTree = "<group>"; };
+		102590C11C5C518A00B68FD1 /* ThemesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemesTableViewCell.xib; sourceTree = "<group>"; };
+		102590C41C5CB06400B68FD1 /* FindItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindItemDetailViewController.swift; sourceTree = "<group>"; };
+		102590C81C5CB1EB00B68FD1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		102590C91C5CB1EB00B68FD1 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		102590CC1C5CB44A00B68FD1 /* FindItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FindItem.json; sourceTree = "<group>"; };
 		10296C7C1C50CF9400B4286E /* back_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_0@2x.png"; sourceTree = "<group>"; };
 		10296C7D1C50CF9400B4286E /* back_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_0@3x.png"; sourceTree = "<group>"; };
 		10296C7E1C50CF9400B4286E /* back_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_1@2x.png"; sourceTree = "<group>"; };
@@ -292,6 +306,8 @@
 		10C002DA1C4682A3002ED5FE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		10C002DC1C468435002ED5FE /* WJCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WJCommon.swift; sourceTree = "<group>"; };
 		10C002E11C468C28002ED5FE /* BaseNavcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavcViewController.swift; sourceTree = "<group>"; };
+		10C952161C5DA54A0049D849 /* WJRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WJRefreshHeader.swift; sourceTree = "<group>"; };
+		10C952181C5DDE2E0049D849 /* WJFileTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WJFileTool.swift; sourceTree = "<group>"; };
 		10CAB9071C5208BE004DE35E /* Choice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Choice.json; sourceTree = "<group>"; };
 		10CAB9501C520AB4004DE35E /* XiaoRiZi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XiaoRiZi-Bridging-Header.h"; sourceTree = "<group>"; };
 		10CABB7E1C52269C004DE35E /* FindCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -488,6 +504,8 @@
 				10CABB7E1C52269C004DE35E /* FindCollectionViewCell.swift */,
 				10CABB7F1C52269C004DE35E /* FindCollectionViewCell.xib */,
 				1082129E1C53279800ABB0F4 /* FindCollectionReusableView.swift */,
+				102590C81C5CB1EB00B68FD1 /* ItemTableViewCell.swift */,
+				102590C91C5CB1EB00B68FD1 /* ItemTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -496,6 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				107C039B1C4781AE0028CAC6 /* FindViewController.swift */,
+				102590C41C5CB06400B68FD1 /* FindItemDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -545,6 +564,7 @@
 				1086FB271C478E0F00450163 /* GetNetMessageTool.swift */,
 				10F5ABBA1C4DE0C700A92962 /* SaveMessageTool.swift */,
 				1039D0E71C4F607700F780C6 /* extensionTool.swift */,
+				10C952181C5DDE2E0049D849 /* WJFileTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -561,6 +581,7 @@
 				1012666E1C50C5BF00C9315C /* LiveCurrentWeek.json */,
 				101266701C50C64500C9315C /* Craftsmen.json */,
 				10898E9D1C575E4200A5043F /* Week.json */,
+				102590CC1C5CB44A00B68FD1 /* FindItem.json */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -681,6 +702,8 @@
 			children = (
 				10296CC21C50D85E00B4286E /* ExploreTableViewCell.swift */,
 				10296CC31C50D85E00B4286E /* ExploreTableViewCell.xib */,
+				102590C01C5C518A00B68FD1 /* ThemesTableViewCell.swift */,
+				102590C11C5C518A00B68FD1 /* ThemesTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -741,6 +764,7 @@
 				10CAB9501C520AB4004DE35E /* XiaoRiZi-Bridging-Header.h */,
 				1082129A1C531AD600ABB0F4 /* BaseModel.swift */,
 				1065D5491C58AB0A000B79FF /* BaseButton.swift */,
+				10C952161C5DA54A0049D849 /* WJRefreshHeader.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -829,6 +853,7 @@
 				10296CB41C50CF9500B4286E /* share_2@2x.png in Resources */,
 				108212E91C53880000ABB0F4 /* go@2x.png in Resources */,
 				1039D0D31C4F17BA00F780C6 /* Find.json in Resources */,
+				102590CB1C5CB1EB00B68FD1 /* ItemTableViewCell.xib in Resources */,
 				1012665F1C507CF800C9315C /* denglu_1@3x.png in Resources */,
 				10CABB881C5228EE004DE35E /* searchbox.png in Resources */,
 				10296CAE1C50CF9500B4286E /* settingh@2x.png in Resources */,
@@ -913,12 +938,14 @@
 				101266611C507CF800C9315C /* fsyzm@3x.png in Resources */,
 				10296CA21C50CF9500B4286E /* collect_1@3x.png in Resources */,
 				108212B01C5354EA00ABB0F4 /* recommendfriend@3x.png in Resources */,
+				102590C31C5C518A00B68FD1 /* ThemesTableViewCell.xib in Resources */,
 				10296CB91C50D0DA00B4286E /* ChoiceCraftsmenTableViewCell.xib in Resources */,
 				10CAB9081C5208BE004DE35E /* Choice.json in Resources */,
 				108212C81C5362CB00ABB0F4 /* participate_1@2x.png in Resources */,
 				10898E9E1C575E4200A5043F /* Week.json in Resources */,
 				108212AD1C5354EA00ABB0F4 /* about@2x.png in Resources */,
 				1012665E1C507CF800C9315C /* denglu_1@2x.png in Resources */,
+				102590CD1C5CB44A00B68FD1 /* FindItem.json in Resources */,
 				10296CC11C50D4F500B4286E /* cline@3x.png in Resources */,
 				1012665D1C507CF800C9315C /* chat@3x.png in Resources */,
 				1039D0E01C4F1C4A00F780C6 /* Default@2x.png in Resources */,
@@ -1002,17 +1029,20 @@
 				109C7CDD1C4B2AD00085C7A2 /* CityViewController.swift in Sources */,
 				10C002DD1C468435002ED5FE /* WJCommon.swift in Sources */,
 				1039D0E81C4F607700F780C6 /* extensionTool.swift in Sources */,
+				102590C21C5C518A00B68FD1 /* ThemesTableViewCell.swift in Sources */,
 				10F5ABC71C4E1A0400A92962 /* ChoiceWebViewController.swift in Sources */,
 				10E8E3B41C4A3C2B00739A94 /* ChoiceLineView.swift in Sources */,
 				10F5ABC31C4E05D700A92962 /* ChiceDetailController.swift in Sources */,
 				10F5ABC51C4E083700A92962 /* ChoiceDetailTableViewCell.swift in Sources */,
 				10D94BF71C56FC4E007F209E /* MIneDetailViewController.swift in Sources */,
 				108212A11C534F2400ABB0F4 /* FindModel.swift in Sources */,
+				102590CA1C5CB1EB00B68FD1 /* ItemTableViewCell.swift in Sources */,
 				10C002AB1C4672C6002ED5FE /* AppDelegate.swift in Sources */,
 				101266761C50CA7100C9315C /* ChoiceWeekTableViewCell.swift in Sources */,
 				101266651C50ABB300C9315C /* BackView.swift in Sources */,
 				109BC3561C5715FE000D203E /* MineFirstTableViewCell.swift in Sources */,
 				107C039C1C4781AE0028CAC6 /* FindViewController.swift in Sources */,
+				102590C61C5CB06400B68FD1 /* FindItemDetailViewController.swift in Sources */,
 				10F5ABBB1C4DE0C700A92962 /* SaveMessageTool.swift in Sources */,
 				102CB1E81C4DD0BF00AC6326 /* XLPlainFlowLayout.m in Sources */,
 				1065D54A1C58AB0A000B79FF /* BaseButton.swift in Sources */,
@@ -1028,6 +1058,8 @@
 				1082129F1C53279800ABB0F4 /* FindCollectionReusableView.swift in Sources */,
 				10E8E3B61C4A4C4800739A94 /* ChoiceNearViewController.swift in Sources */,
 				10C002D91C4679BF002ED5FE /* MineViewController.swift in Sources */,
+				10C952191C5DDE2E0049D849 /* WJFileTool.swift in Sources */,
+				10C952171C5DA54A0049D849 /* WJRefreshHeader.swift in Sources */,
 				108212991C53191200ABB0F4 /* ExploreModel.swift in Sources */,
 				10CABB801C52269C004DE35E /* FindCollectionViewCell.swift in Sources */,
 			);

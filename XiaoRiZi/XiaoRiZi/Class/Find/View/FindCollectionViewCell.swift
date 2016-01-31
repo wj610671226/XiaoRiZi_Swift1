@@ -19,7 +19,7 @@ class FindCollectionViewCell: UICollectionViewCell {
     var model: FindModel? {
         didSet {
             // 图片
-            img.sd_setImageWithURL(NSURL(string: (model?.img)!))
+            img.downLoadImage((model?.img)!)
             
             // 标题
             titleLabel.text = model?.name
@@ -30,5 +30,4 @@ class FindCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

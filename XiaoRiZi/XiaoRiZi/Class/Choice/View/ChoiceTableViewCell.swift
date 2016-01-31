@@ -28,7 +28,7 @@ class ChoiceTableViewCell: UITableViewCell {
         // 设置数据
         didSet {
             // 图片
-            backImageView.sd_setImageWithURL(NSURL(string: (model?.img)!))
+            backImageView.downLoadImage((model?.img)!)
             
             // 标题
             titleLabel.text = model?.title ?? ""

@@ -23,8 +23,8 @@ class ChoiceCraftsmenTableViewCell: UITableViewCell {
     
     var model: CiaftsmenModel? {
         didSet {
-            img.sd_setImageWithURL(NSURL(string: model!.img!))
-            iconImageView.sd_setImageWithURL(NSURL(string: model!.head_photo!))
+            img.downLoadImage(model!.img!)
+            iconImageView.downLoadImage(model!.head_photo!)
             nameLabel.text = model!.name ?? ""
             tagAndWorkroomLabel.text = model!.tag! + model!.workroom!
             titleLabel.text = model!.title

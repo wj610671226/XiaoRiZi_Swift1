@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChiceDetailController: UIViewController , UITableViewDelegate, UITableViewDataSource, ChoiceDetailTableViewCellDelegate {
+class ChiceDetailController: UIViewController , UITableViewDelegate, UITableViewDataSource, ChoiceDetailTableViewCellDelegate , WJScorllViewDelegate{
 
     /// detailTableView
     private weak var detailTableView: UITableView!
@@ -28,9 +28,6 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
 
         // 初始化tableView
         initDetailTableView()
-        
-        // 获取数据
-        getDetailmessage()
     }
 
     // MARK: 初始化tableView
@@ -43,6 +40,11 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
         tableView.separatorStyle = .None
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0)
         detailTableView = tableView
+        
+        // 添加刷新
+        tableView.mj_header = WJRefreshHeader(refreshingTarget: self, refreshingAction: "getDetailmessage")
+        // 开始刷新
+        tableView.mj_header.beginRefreshing()
     }
     
     // MARK : UITableViewDataSource, UITableViewDelegate
@@ -112,7 +114,7 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
         }
     }
     // MARK: 获取详细的数据
-    private func getDetailmessage() {
+    func getDetailmessage() {
         dataSources.removeAllObjects()
         switch cellType! {
         case 0:
@@ -134,11 +136,14 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
                 ["article": "ArticleModel"]
             })
             let data = ChoiceDetailModel.mj_objectArrayWithKeyValuesArray(responseObject["list"])
-            
             self.dataSources.addObjectsFromArray(data as [AnyObject])
             
+            // 停止刷新
+            self.stopRefreshAndReloadTableView()
         }) { (errorMessage) -> Void in
                 print("error = \(errorMessage)")
+            // 停止刷新
+            self.stopRefreshAndReloadTableView()
         }
     }
     
@@ -156,10 +161,15 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
             let modelArray = WeekHeadModel.mj_objectArrayWithKeyValuesArray(responseObject["head"])
             self.headerModelArray.addObjectsFromArray(modelArray as [AnyObject])
             
+            // 停止刷新
+            self.stopRefreshAndReloadTableView()
+            
             // 添加头部视图
             self.addHeaderView()
         }) { (errorMessage) -> Void in
-                print("获取周末的数据 = \(errorMessage)")
+            print("获取周末的数据 = \(errorMessage)")
+            // 停止刷新
+            self.stopRefreshAndReloadTableView()
         }
     }
     
@@ -171,9 +181,13 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
             let dataArray = CiaftsmenModel.mj_objectArrayWithKeyValuesArray(responseObject["list"])
             self.dataSources.addObjectsFromArray(dataArray as [AnyObject])
             
-            self.detailTableView.reloadData()
+            // 停止刷新
+            self.stopRefreshAndReloadTableView()
+            
         }) { (errorMessage) -> Void in
-                print("获取匠人的数据 = \(errorMessage)")
+            print("获取匠人的数据 = \(errorMessage)")
+            // 停止刷新
+            self.stopRefreshAndReloadTableView()
         }
     }
     
@@ -193,6 +207,7 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
     // MARK: 添加头部视图
     private func addHeaderView() {
         let headerView = WJScrollView(frame: CGRect(x: 0, y: 0, width: KmainScreenW, height: 150))
+        headerView.delegate = self
         detailTableView.tableHeaderView = headerView
         
         // 给头部视图设置图片数组
@@ -202,6 +217,19 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
             imageArray.append(model.adurl!)
         }
         headerView.imageNames = imageArray
+    }
+    
+    // MARk: WJScorllViewDelegate - 进入详细页
+    func processScorllViewButton(btnTag: Int) {
+        let detailVC = ChoiceWebViewController()
+        detailVC.url = (headerModelArray[btnTag] as! WeekHeadModel).mobileURL
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+    // 停止刷新
+    private func stopRefreshAndReloadTableView() {
+        detailTableView.reloadData()
+        detailTableView.mj_header.endRefreshing()
     }
     
     override func didReceiveMemoryWarning() {

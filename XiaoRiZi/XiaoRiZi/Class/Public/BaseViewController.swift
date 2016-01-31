@@ -46,7 +46,7 @@ class BaseViewController: UIViewController {
         
         // leftItem
         leftItem = BaseBtn(frame: CGRect(x: 0, y: subViewY, width: 80, height: subViewH))
-        let title: String = SaveMessageTool.readeCurrentCityMessage(KCityKey)
+        let title: String = (SaveMessageTool.readeMessage(KCityKey) ?? "成都") as! String
         leftItem.setTitle(title, forState: .Normal)
         leftItem.setImage(UIImage(named: "home_down"), forState: .Normal)
         leftItem.setTitleColor(UIColor.blackColor(), forState: .Normal)
@@ -85,7 +85,7 @@ class BaseViewController: UIViewController {
         let title = info.valueForKey("object") as? String
         leftItem.setTitle(title, forState: .Normal)
         // 将城市信息写入沙盒
-        SaveMessageTool.saveCurrentCityMessage(title!)
+        SaveMessageTool.saveMessage(KCityKey, object: title!)
     }
     
     deinit {

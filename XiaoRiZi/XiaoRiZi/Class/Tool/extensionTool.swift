@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import UIKit
+
+// MARK: String
 extension String {
     
     /**
@@ -26,6 +27,7 @@ extension String {
 }
 
 
+// MARK: UIImage
 extension UIImage {
     
     /**
@@ -45,6 +47,7 @@ extension UIImage {
     }
 }
 
+// MARK: UIBarButtonItem
 extension UIBarButtonItem {
     convenience init(normalImageName: String, selectedImageName: String, target: AnyObject, action: Selector) {
         let btn = UIButton(type: .Custom)
@@ -54,5 +57,74 @@ extension UIBarButtonItem {
         btn.frame = CGRect(x: 0, y: 0, width: 60, height: 44)
         btn.addTarget(target, action: action, forControlEvents: .TouchDown)
         self.init(customView: btn)
+    }
+}
+
+// MARK: UIImageView
+extension UIImageView {
+    /**
+     给imageView设置网络图片
+     
+     - parameter imageName:            图片名字
+     - parameter placeholderImageName: 占位图片
+     */
+    func downLoadImage(imageName: String, placeholderImageName: String) {
+        self.sd_setImageWithURL(NSURL(string: imageName), placeholderImage: UIImage(named:placeholderImageName))
+    }
+    
+    /**
+     给imageView设置网络图片
+     
+     - parameter imageName:            图片名字
+     */
+    func downLoadImage(imageName: String) {
+//        self.downLoadImage(imageName, placeholderImageName: "")
+        self.sd_setImageWithURL(NSURL(string: imageName))
+    }
+}
+
+// MARK: UIButton
+extension UIButton {
+    /**
+     给按钮设置网络背景图片
+     
+     - parameter imageName:            图片名
+     - parameter state:                状态
+     - parameter placeholderImageName: 占位图片名
+     */
+    func downLoadBackgroundImage(imageName: String, state: UIControlState, placeholderImageName: String) {
+        self.sd_setBackgroundImageWithURL(NSURL(string: imageName), forState: state, placeholderImage: UIImage(named: placeholderImageName))
+    }
+    
+    /**
+     给按钮设置网络背景图片
+     
+     - parameter imageName: 图片名
+     - parameter state:     状态
+     */
+    func downLoadBackgroundImage(imageName: String, state: UIControlState) {
+        self.sd_setBackgroundImageWithURL(NSURL(string: imageName), forState: state
+        )
+    }
+    
+    /**
+     给按钮设置网络图片
+     
+     - parameter imageName:            图片名
+     - parameter state:                状态
+     - parameter placeholderImageName: 占位图片名
+     */
+    func downLoadImage(imageName: String, state: UIControlState, placeholderImageName: String) {
+        self.sd_setBackgroundImageWithURL(NSURL(string: imageName), forState: state, placeholderImage: UIImage(named: placeholderImageName))
+    }
+    
+    /**
+     给按钮设置网络图片
+     
+     - parameter imageName: 图片名
+     - parameter state:     状态
+     */
+    func downLoadImage(imageName: String, state: UIControlState) {
+        self.sd_setImageWithURL(NSURL(string: imageName), forState: state)
     }
 }

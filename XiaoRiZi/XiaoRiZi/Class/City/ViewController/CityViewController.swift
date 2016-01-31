@@ -25,8 +25,8 @@ class CityViewController: BaseViewController , UICollectionViewDelegate, UIColle
     
     // 当前城市
     lazy var currentCity: String = {
-        return SaveMessageTool.readeCurrentCityMessage(KCityKey)
-    }()
+        return SaveMessageTool.readeMessage(KCityKey) ?? "成都"
+    }() as! String
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -169,7 +169,6 @@ class CityViewController: BaseViewController , UICollectionViewDelegate, UIColle
         // Dispose of any resources that can be recreated.
     }
     
-
     deinit {
         print("CityViewController 释放")
     }

@@ -45,7 +45,7 @@
                             </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="PKH-Oe-YQq" secondAttribute="trailing" id="4Fm-rN-Dya"/>
                             <constraint firstItem="PcL-B8-j0O" firstAttribute="leading" secondItem="b9e-2T-gbE" secondAttribute="leading" constant="2" id="EBg-5Z-A3f"/>
@@ -58,6 +58,11 @@
                             <constraint firstItem="PKH-Oe-YQq" firstAttribute="leading" secondItem="b9e-2T-gbE" secondAttribute="leading" id="tV2-t4-U8K"/>
                             <constraint firstItem="PcL-B8-j0O" firstAttribute="top" secondItem="b9e-2T-gbE" secondAttribute="top" constant="2" id="yuu-UQ-7Jq"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <real key="value" value="47.5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4d-VV-Ktf">
                         <rect key="frame" x="0.0" y="260" width="320" height="89"/>

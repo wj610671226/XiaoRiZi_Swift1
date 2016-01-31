@@ -10,6 +10,9 @@ import UIKit
 
 class WJPageControl: UIPageControl {
 
+    /// 记录上一次的page
+    private var lastPageItme: BaseButton?
+    
     /// 重写属性
     override var currentPage: Int {
         didSet {
@@ -17,11 +20,16 @@ class WJPageControl: UIPageControl {
                 return
             }
             
+            if lastPageItme != nil {
+                lastPageItme?.selected = false
+            }
+            
             for obj in self.subviews {
-                if obj is UIButton {
+                if obj is BaseButton {
                     // 设置当前按钮的选中状态
-                    let btn = self.subviews[currentPage] as! UIButton
+                    let btn = self.subviews[currentPage] as! BaseButton
                     btn.selected = true
+                    lastPageItme = btn
                 } else {
                     // 移除其他无关的视图
                     obj.removeFromSuperview()

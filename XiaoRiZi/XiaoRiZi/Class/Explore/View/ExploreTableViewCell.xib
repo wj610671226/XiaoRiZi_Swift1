@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPc-vG-iK5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="date.png" translatesAutoresizingMaskIntoConstraints="NO" id="HCX-nc-LRk">
                                 <rect key="frame" x="10" y="5" width="77" height="32"/>
@@ -39,17 +39,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxw-eO-j3k">
-                                <rect key="frame" x="55" y="13" width="26" height="30"/>
+                                <rect key="frame" x="55" y="13" width="25" height="25"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="让开心变成一种习惯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amK-nh-KzE">
-                                <rect key="frame" x="97" y="14" width="171" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="让开心变成一种习惯" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amK-nh-KzE">
+                                <rect key="frame" x="97" y="5" width="144" height="35"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -57,10 +57,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="amK-nh-KzE" firstAttribute="top" secondItem="bPc-vG-iK5" secondAttribute="top" constant="5" id="2LQ-9v-RqH"/>
                             <constraint firstItem="9Ew-f8-JdV" firstAttribute="leading" secondItem="bPc-vG-iK5" secondAttribute="leading" constant="20" id="77r-Bc-l4Y"/>
-                            <constraint firstAttribute="height" constant="50" id="8f1-0p-5My"/>
+                            <constraint firstAttribute="height" constant="45" id="8f1-0p-5My"/>
                             <constraint firstItem="mxw-eO-j3k" firstAttribute="leading" secondItem="9Ew-f8-JdV" secondAttribute="trailing" id="BM5-oS-3b1"/>
                             <constraint firstAttribute="bottom" secondItem="mxw-eO-j3k" secondAttribute="bottom" constant="7" id="CEZ-Qp-5rH"/>
+                            <constraint firstAttribute="bottom" secondItem="amK-nh-KzE" secondAttribute="bottom" constant="5" id="D1P-an-N5B"/>
                             <constraint firstItem="HCX-nc-LRk" firstAttribute="leading" secondItem="bPc-vG-iK5" secondAttribute="leading" constant="10" id="PHN-dJ-nMs"/>
                             <constraint firstItem="mxw-eO-j3k" firstAttribute="top" secondItem="bPc-vG-iK5" secondAttribute="top" constant="13" id="S36-Ax-aht"/>
                             <constraint firstItem="mxw-eO-j3k" firstAttribute="bottom" secondItem="9Ew-f8-JdV" secondAttribute="bottom" id="Y12-Qv-gJl"/>
@@ -82,11 +84,11 @@
                         </variation>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kWT-wA-GpA">
-                        <rect key="frame" x="0.0" y="50" width="320" height="199"/>
+                        <rect key="frame" x="0.0" y="45" width="320" height="204"/>
                         <animations/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="空白也是一种味道" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wql-Hs-DHo">
-                        <rect key="frame" x="10" y="60" width="144" height="30"/>
+                        <rect key="frame" x="10" y="55" width="144" height="30"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="CR6-MD-jR7"/>
@@ -96,7 +98,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="武侯区棕苑巷2号附22号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdZ-HU-FzP">
-                        <rect key="frame" x="10" y="90" width="162" height="21"/>
+                        <rect key="frame" x="10" y="85" width="162" height="21"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="HCT-Hc-dm1"/>
@@ -124,8 +126,10 @@
             <animations/>
             <connections>
                 <outlet property="addressLabel" destination="FdZ-HU-FzP" id="Ycu-i6-rAv"/>
+                <outlet property="dayLabel" destination="mxw-eO-j3k" id="hEB-HJ-EsZ"/>
                 <outlet property="dayWordLabel" destination="amK-nh-KzE" id="FOe-rK-sVK"/>
                 <outlet property="img" destination="kWT-wA-GpA" id="IQJ-pJ-8Bu"/>
+                <outlet property="monthLabel" destination="9Ew-f8-JdV" id="fls-Is-aLt"/>
                 <outlet property="titleLabel" destination="Wql-Hs-DHo" id="56C-il-bLP"/>
             </connections>
             <point key="canvasLocation" x="258" y="228"/>

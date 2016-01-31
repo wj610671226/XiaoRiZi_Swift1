@@ -30,7 +30,9 @@ class MIneDetailViewController: UITableViewController {
         case 2:
             return tableView.dequeueReusableCellWithIdentifier("thirdCell")!
         case 3:
-            return tableView.dequeueReusableCellWithIdentifier("fourCell")!
+            let cell = tableView.dequeueReusableCellWithIdentifier("fourCell")!
+            cell.detailTextLabel?.text = getCacheSize()
+            return cell
         default:
             return UITableViewCell()
         }
@@ -45,10 +47,21 @@ class MIneDetailViewController: UITableViewController {
         case 2:
             print("")
         case 3:
-            print("")
+            // 清理缓存
+            WJFileTool.clearCacheFile(NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).last!, clearSuccess: { () -> Void in
+                let index = NSIndexPath(forRow: 3, inSection: 0)
+                self.detailTableView.reloadRowsAtIndexPaths([index], withRowAnimation: UITableViewRowAnimation.None)
+            })
         default:
             print("")
         }
+    }
+    
+    // 获取缓存文件的大小
+    private func getCacheSize() -> String {
+        let path =  NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).last
+        let pathSize = WJFileTool.getFolderCacheFileSize(path!)
+        return String(format: "%.2fM", pathSize)
     }
     
     override func didReceiveMemoryWarning() {

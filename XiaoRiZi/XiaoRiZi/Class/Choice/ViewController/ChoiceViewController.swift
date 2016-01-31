@@ -13,7 +13,6 @@ class ChoiceViewController: BaseViewController, UITableViewDataSource, UITableVi
     /**
      控制 详细页面显示的内容样式
      */
-    
     enum DetailType: Int {
         case DetailTypeWebView = 5
         case DetailTypeOther          // 其他
@@ -44,7 +43,7 @@ class ChoiceViewController: BaseViewController, UITableViewDataSource, UITableVi
         view.addSubview(choiceTableView)
         
         // 添加刷新
-        choiceTableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "getNetDataMessage")
+        choiceTableView.mj_header = WJRefreshHeader(refreshingTarget: self, refreshingAction: "getNetDataMessage")
         // 开始刷新
         choiceTableView.mj_header.beginRefreshing()
     }

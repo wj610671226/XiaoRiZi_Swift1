@@ -22,15 +22,21 @@ class FindViewController: BaseViewController , UICollectionViewDelegate, UIColle
     /// 数据源
     private lazy var findDataSources: NSMutableArray = NSMutableArray()
     
+    /// 热门搜索
+    private var hotSearch: String?
+    
+    /// 头部视图
+    private weak var headerView: FindCollectionReusableView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = "发现"
         view.backgroundColor = UIColor.init(red: 240 / 255.0, green: 240 / 255.0, blue: 240 / 255.0, alpha: 1)
+
+        getFindData()
         
         // 初始化界面
         initFindInterface()
-        
-        getFindData()
     }
 
     // MARK: 初始化界面
@@ -39,14 +45,14 @@ class FindViewController: BaseViewController , UICollectionViewDelegate, UIColle
         let searchBar = SearchBarView(frame: CGRect(x: Kpadding, y: 74, width: KmainScreenW - 2 * Kpadding, height: 35))
         view.addSubview(searchBar)
         
-        
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = Kpadding / 2
         layout.minimumInteritemSpacing = 0
         let itemW = (KmainScreenW - 2 * Kpadding) / 3 - 1.0
         let itemH: CGFloat = 100
         layout.itemSize = CGSize(width: itemW, height: itemH)
-        layout.headerReferenceSize = CGSize(width: KmainScreenW, height: 250)
+        // 这里这样处理是为了设置UICollectionReusableView的动态高度  计算了加上下的共计算了2次
+        layout.headerReferenceSize = CGSize(width: KmainScreenW, height: FindCollectionReusableView().reusableViewAddAllSubviews(hotSearch!))
         layout.sectionInset = UIEdgeInsetsMake(Kpadding / 2, Kpadding / 2, Kpadding / 2, Kpadding / 2)
 
         // collectionView
@@ -59,6 +65,10 @@ class FindViewController: BaseViewController , UICollectionViewDelegate, UIColle
         findCollectionView = collectionView
         view.addSubview(collectionView)
         
+        // 添加刷新
+        collectionView.mj_header = WJRefreshHeader(refreshingTarget: self, refreshingAction: "getFindData")
+        collectionView.mj_header.beginRefreshing()
+
         // 注册
         collectionView.registerNib(UINib(nibName: "FindCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: COLLECTION_CELLID)
         collectionView.registerClass(FindCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: COLLECTION_HEADERID)
@@ -76,35 +86,43 @@ class FindViewController: BaseViewController , UICollectionViewDelegate, UIColle
         if findDataSources.count > 0 {
             cell?.model = findDataSources[indexPath.row] as? FindModel
         }
-        
         return cell!
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        let model = findDataSources[indexPath.row] as! FindModel
+        let detailVC = FindItemDetailViewController()
+        detailVC.title = model.name
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: COLLECTION_HEADERID, forIndexPath: indexPath)
-        headerView.backgroundColor = UIColor.redColor()
-        return headerView
+        if headerView == nil {
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: COLLECTION_HEADERID, forIndexPath: indexPath) as! FindCollectionReusableView
+            headerView.hot = hotSearch!
+            self.headerView = headerView
+            return headerView
+        } else {
+            return self.headerView!
+        }
     }
     
-    
     // MARK: 获取数据
-    private func getFindData() {
+    func getFindData() {
         GetNetMessageTool.getLocalMessageWithJsonData("Find.json", successBlock: { (responseObject) -> Void in
             print(responseObject)
-            // 转模型
             
+            self.hotSearch = responseObject["hot"] as? String
+            // 转模型
             let jsonArray = responseObject["list"]!![0]["tags"]
             let dataArray = FindModel.mj_objectArrayWithKeyValuesArray(jsonArray)
             self.findDataSources.addObjectsFromArray(dataArray as [AnyObject])
             
             self.findCollectionView?.reloadData()
-            
+            self.findCollectionView?.mj_header.endRefreshing()
             }) { (errorMessage) -> Void in
                 print("error = \(errorMessage)")
+                self.findCollectionView?.mj_header.endRefreshing()
         }
     }
     
