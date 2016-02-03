@@ -4,7 +4,7 @@
 //
 //  Created by ty on 16/1/23.
 //  Copyright © 2016年 ty. All rights reserved.
-//
+//  基本的模型
 
 import UIKit
 

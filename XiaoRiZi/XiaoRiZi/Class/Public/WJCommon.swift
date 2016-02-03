@@ -4,7 +4,7 @@
 //
 //  Created by ty on 16/1/13.
 //  Copyright © 2016年 ty. All rights reserved.
-//
+//  公共的信息
 
 // 屏幕的宽
 let KmainScreenW: CGFloat = UIScreen.mainScreen().bounds.width
@@ -23,6 +23,7 @@ let KTabBarHeight: CGFloat = 49
 
  /// 城市改变通知的名字
 let CityChangeNSNotificationName: String = "CityChangeNSNotificationName"
+let CollectBtnSelectedChangeName: String = "collectBtnSelectedChange"
 
  /// 存储当前城市的KEY
 let KCityKey: String = "CityKey"

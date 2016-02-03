@@ -4,7 +4,7 @@
 //
 //  Created by ty on 16/1/27.
 //  Copyright © 2016年 ty. All rights reserved.
-//
+//  去除高亮效果的按钮
 
 import UIKit
 

@@ -4,7 +4,7 @@
 //
 //  Created by ty on 16/1/13.
 //  Copyright © 2016年 ty. All rights reserved.
-//
+//  抽出来的基本控制器  具有自定义的导航条
 
 import UIKit
 
@@ -120,14 +120,6 @@ class BaseBtn: UIButton {
         titleLabel?.font = UIFont.systemFontOfSize(KItemFont)
     }
 
-//    override func titleRectForContentRect(contentRect: CGRect) -> CGRect {
-//        return CGRect(x: 0, y: 0, width: contentRect.width * Ksacle, height: contentRect.height)
-//    }
-//    
-//    override func imageRectForContentRect(contentRect: CGRect) -> CGRect {
-//        return CGRect(x: contentRect.width * Ksacle, y: 0, width: contentRect.width * (1 - Ksacle), height: contentRect.height)
-//    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         titleLabel!.sizeToFit()

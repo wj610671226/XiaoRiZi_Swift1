@@ -26,21 +26,8 @@ class ChoiceDetailModel : NSObject {
     /// 日期
     var date: String?
     
-    /// article
-    var article: NSArray? {
-        didSet {
-            let data: NSMutableArray = NSMutableArray()
-            for obj in article! {
-                let model = ArticleModel()
-                model.img = obj["img"] as? String
-                model.title = obj["title"] as? String
-                model.url = obj["url"] as? String
-                model.tag = obj["tag"] as? String
-                data.addObject(model)
-            }
-            article = data
-        }
-    }
+    // article
+    var article: [ArticleModel]?
 }
 
 class ArticleModel: BaseModel {
@@ -65,6 +52,15 @@ class CiaftsmenModel: BaseModel {
 class WeekModel: BaseModel {
     /// 图片数组
     var imgs: [String]?
+    
+    /// 手机端地址
+    var mobileURL: String?
+    
+    /// 店铺地址
+    var address: String?
+    
+    /// 分享地址
+    var shareURL: String?
 }
 
 class WeekHeadModel: NSObject {

@@ -65,21 +65,56 @@
                         <action selector="processShareBtn:" destination="iN0-l3-epB" eventType="touchDown" id="i9V-4b-LAF"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="朋友圈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zY-Oa-cVd">
+                    <rect key="frame" x="10" y="150" width="90" height="24"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="kRj-3G-7vR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaf-if-rj0">
+                    <rect key="frame" x="115" y="150" width="90" height="24"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgp-Io-ihG">
+                    <rect key="frame" x="220" y="150" width="90" height="24"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="gzn-7X-QOb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3ja-Pf-DHJ"/>
+                <constraint firstItem="0zY-Oa-cVd" firstAttribute="top" secondItem="DWx-6g-ULF" secondAttribute="bottom" id="5cj-ED-bim"/>
                 <constraint firstItem="cXt-1A-6q1" firstAttribute="height" secondItem="DWx-6g-ULF" secondAttribute="height" id="7C1-MJ-l3Y"/>
+                <constraint firstItem="qaf-if-rj0" firstAttribute="top" secondItem="0zY-Oa-cVd" secondAttribute="top" id="Apc-dd-Jo4"/>
+                <constraint firstItem="qaf-if-rj0" firstAttribute="height" secondItem="0zY-Oa-cVd" secondAttribute="height" id="Bsz-6j-wf8"/>
+                <constraint firstItem="wgp-Io-ihG" firstAttribute="height" secondItem="qaf-if-rj0" secondAttribute="height" id="Cl5-0Z-arf"/>
                 <constraint firstItem="gzn-7X-QOb" firstAttribute="top" secondItem="cXt-1A-6q1" secondAttribute="bottom" constant="20" id="Etw-n3-69I"/>
                 <constraint firstItem="Uer-wy-M24" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Q3X-gW-Zu6"/>
                 <constraint firstAttribute="trailing" secondItem="KzL-tO-uhS" secondAttribute="trailing" constant="10" id="Tl7-0A-wkX"/>
                 <constraint firstItem="Uer-wy-M24" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WmZ-EM-nXF"/>
                 <constraint firstItem="DWx-6g-ULF" firstAttribute="top" secondItem="Uer-wy-M24" secondAttribute="bottom" constant="10" id="adq-bo-zrh"/>
+                <constraint firstItem="0zY-Oa-cVd" firstAttribute="trailing" secondItem="DWx-6g-ULF" secondAttribute="trailing" id="bji-0w-isb"/>
+                <constraint firstItem="qaf-if-rj0" firstAttribute="width" secondItem="0zY-Oa-cVd" secondAttribute="width" id="ci5-Nz-EkK"/>
                 <constraint firstItem="KzL-tO-uhS" firstAttribute="width" secondItem="cXt-1A-6q1" secondAttribute="width" id="h6n-Zj-2bb"/>
+                <constraint firstItem="wgp-Io-ihG" firstAttribute="leading" secondItem="KzL-tO-uhS" secondAttribute="leading" id="iJs-pj-maY"/>
+                <constraint firstItem="0zY-Oa-cVd" firstAttribute="leading" secondItem="DWx-6g-ULF" secondAttribute="leading" id="izA-Vx-fcG"/>
                 <constraint firstItem="DWx-6g-ULF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="jSo-nc-WMf"/>
                 <constraint firstItem="KzL-tO-uhS" firstAttribute="top" secondItem="cXt-1A-6q1" secondAttribute="top" id="qfd-I0-NsV"/>
                 <constraint firstItem="cXt-1A-6q1" firstAttribute="width" secondItem="DWx-6g-ULF" secondAttribute="width" id="rAP-sg-7LA"/>
+                <constraint firstItem="wgp-Io-ihG" firstAttribute="width" secondItem="qaf-if-rj0" secondAttribute="width" id="rfW-QO-4EJ"/>
+                <constraint firstItem="qaf-if-rj0" firstAttribute="leading" secondItem="cXt-1A-6q1" secondAttribute="leading" id="riV-bj-459"/>
+                <constraint firstItem="wgp-Io-ihG" firstAttribute="top" secondItem="qaf-if-rj0" secondAttribute="top" id="s7S-6c-mWg"/>
                 <constraint firstAttribute="trailing" secondItem="Uer-wy-M24" secondAttribute="trailing" id="tiP-ff-W57"/>
                 <constraint firstItem="cXt-1A-6q1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uiA-BH-kUC"/>
                 <constraint firstItem="KzL-tO-uhS" firstAttribute="height" secondItem="cXt-1A-6q1" secondAttribute="height" id="wme-hU-Ebq"/>

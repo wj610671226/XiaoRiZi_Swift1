@@ -4,7 +4,7 @@
 //
 //  Created by ty on 16/1/21.
 //  Copyright © 2016年 ty. All rights reserved.
-//
+//  黑色背景
 
 import UIKit
 

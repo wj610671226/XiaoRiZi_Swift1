@@ -106,7 +106,7 @@ class FindCollectionReusableView: UICollectionReusableView {
     }
     
     // MARK: 点击按钮
-    private func processChooseBtn(sender: BaseButton) {
+    func processChooseBtn(sender: BaseButton) {
         print("title = \(sender.titleLabel?.text)")
     }
     

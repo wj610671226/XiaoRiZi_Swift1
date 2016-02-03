@@ -128,3 +128,26 @@ extension UIButton {
         self.sd_setImageWithURL(NSURL(string: imageName), forState: state)
     }
 }
+
+extension UIViewController {
+    
+    func addBlackBackGroundViewAndShareView(blackViewFrame: CGRect, target: AnyObject, action: Selector) {
+        // 黑色背景
+        let backView = BackView(frame: blackViewFrame, target: target, action: action)
+        view.addSubview(backView)
+        
+        // 分享视图
+        let shareView = ShareView.shareViewWithXib()
+        shareView.frame.size.width = KmainScreenW
+        shareView.frame.origin.y = KmainScreenH
+        
+        // 隐藏黑色背景的闭包
+        shareView.hiddenShareView = { () -> Void in
+            backView.canalAlpha()
+        }
+        
+        view.addSubview(shareView)
+        // 展示分型视图的动画
+        shareView.showShareView()
+    }
+}

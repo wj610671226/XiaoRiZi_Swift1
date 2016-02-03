@@ -40,10 +40,10 @@ class ChoiceDetailTableViewCell: UITableViewCell {
             // 给模型赋值
             // 把 topView（按钮） titleLabel作为时间显示
             topView?.timeLabel?.text = detailModel?.date ?? ""
-            topView?.model = detailModel?.article![(topView?.tag)!] as? ArticleModel
+            topView?.model = detailModel?.article![(topView?.tag)!]
             
-            middleView?.model = detailModel?.article![(middleView?.tag)!] as? ArticleModel
-            bottomView?.model = detailModel?.article![(bottomView?.tag)!] as? ArticleModel
+            middleView?.model = detailModel?.article![(middleView?.tag)!]
+            bottomView?.model = detailModel?.article![(bottomView?.tag)!]
         }
     }
     

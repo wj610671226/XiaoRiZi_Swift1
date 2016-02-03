@@ -4,7 +4,7 @@
 //
 //  Created by ty on 16/1/31.
 //  Copyright © 2016年 ty. All rights reserved.
-//
+//  自定义动画的下来刷新头部控件
 
 import UIKit
 import MJRefresh

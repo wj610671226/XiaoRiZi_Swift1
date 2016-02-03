@@ -52,6 +52,10 @@
                         <state key="normal" title="喜欢" image="collect_1.png" backgroundImage="fsyzm.png">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <state key="selected" title="喜欢" image="collect_2.png"/>
+                        <connections>
+                            <action selector="processLikeBtn:" destination="KGk-i7-Jjw" eventType="touchDown" id="3Vd-Xt-FSh"/>
+                        </connections>
                     </button>
                 </subviews>
                 <animations/>
@@ -72,6 +76,7 @@
             <animations/>
             <connections>
                 <outlet property="imgView" destination="zfm-MS-iq7" id="E2u-n8-NDw"/>
+                <outlet property="likeBtn" destination="R3h-kv-Pv2" id="Z2t-Za-sSo"/>
                 <outlet property="tagLabel" destination="wll-Fq-qOg" id="gNg-QD-bTz"/>
                 <outlet property="titleLabel" destination="L1S-OD-yxA" id="No1-ku-ABP"/>
             </connections>
@@ -80,6 +85,7 @@
     </objects>
     <resources>
         <image name="collect_1.png" width="44" height="44"/>
+        <image name="collect_2.png" width="44" height="44"/>
         <image name="fsyzm.png" width="100" height="36"/>
     </resources>
 </document>

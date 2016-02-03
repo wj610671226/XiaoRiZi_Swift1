@@ -73,6 +73,12 @@ class ChoiceViewController: BaseViewController, UITableViewDataSource, UITableVi
             (detailVC as! ChoiceWebViewController).url = model.theme_url
             (detailVC as! ChoiceWebViewController).isCollection = false
         } else {
+            if indexPath.row == 2 {
+                // 娱乐页面
+                let alert = UIAlertView(title: "温馨提示", message: "此模块暂未开放", delegate: nil, cancelButtonTitle: "确定")
+                alert.show()
+                return
+            }
             // 进入  每天、匠人、周末页面
             detailVC = ChiceDetailController()
             (detailVC as! ChiceDetailController).cellType = indexPath.row
@@ -114,7 +120,8 @@ class ChoiceViewController: BaseViewController, UITableViewDataSource, UITableVi
     //  MARK: 点击附近按钮
     func processNearItem() {
         print("附近")
-        navigationController?.pushViewController(ChoiceNearViewController(), animated: true)
+        return
+//        navigationController?.pushViewController(ChoiceNearViewController(), animated: true)
     }
     
     override func didReceiveMemoryWarning() {

@@ -74,8 +74,35 @@ class ShopsModel: NSObject {
     var title: String?
     /// 图片
     var img: String?
+    /// tag
+    var tag: String?
+    /// content
+    var content: String?
+    /// city
+    var city: String?
+    /// position
+    var position: String?
+    /// more
+    var more: [MoreModel]?
 }
 
+/// themes 模型
+class MoreModel: NSObject {
+    /// tag
+    var tag: String?
+    /// 图片
+    var img: String?
+    /// 标题
+    var title: String?
+    /// 姓名
+    var name: String?
+    /// position
+    var position: String?
+    /// 地址
+    var address: String?
+    /// city
+    var city: String?
+}
 /// themes 模型
 class ThemesModel: ChoiceListModel {
     

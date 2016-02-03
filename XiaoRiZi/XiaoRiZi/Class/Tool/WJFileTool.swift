@@ -71,6 +71,7 @@ class WJFileTool: NSObject {
                     }
                 }
                 
+                // 线程睡一秒   让SVProgressHUD 停留的时间长一些，体验更好
                 NSThread.sleepForTimeInterval(1)
                 
                 // 结束清理

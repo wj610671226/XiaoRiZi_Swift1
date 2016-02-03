@@ -91,7 +91,9 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch cellType! {
         case 1:
-            print("meitian")
+            let weekDetailVC = WeekDetailViewController()
+            weekDetailVC.model = dataSources[indexPath.row] as? WeekModel
+            navigationController?.pushViewController(weekDetailVC, animated: true)
         case 3:
             let webVC = ChoiceWebViewController()
             webVC.url = (dataSources[indexPath.row] as? CiaftsmenModel)?.url
@@ -132,9 +134,11 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
     private func getBeautyDayMessage() {
         GetNetMessageTool.getLocalMessageWithJsonData("ChoiceDetail.json", successBlock: { (responseObject) -> Void in
             print("detail = \(responseObject)")
+            
             ChoiceDetailModel.mj_setupObjectClassInArray({ () -> [NSObject : AnyObject]! in
-                ["article": "ArticleModel"]
+                ["article": ArticleModel.self]
             })
+            
             let data = ChoiceDetailModel.mj_objectArrayWithKeyValuesArray(responseObject["list"])
             self.dataSources.addObjectsFromArray(data as [AnyObject])
             
@@ -199,7 +203,7 @@ class ChiceDetailController: UIViewController , UITableViewDelegate, UITableView
         let number: NSInteger = NSInteger(currentBtnTitle.substringFromIndex(currentBtnTitle.startIndex.successor()))!
         
         let choiceDetailModel = dataSources[row] as! ChoiceDetailModel
-        let model = choiceDetailModel.article![number] as! ArticleModel
+        let model = choiceDetailModel.article![number] 
         deatailVC.url = model.url
         navigationController?.pushViewController(deatailVC, animated: true)
     }

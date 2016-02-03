@@ -94,6 +94,9 @@ class ExploreViewController: BaseViewController ,UITableViewDelegate, UITableVie
         
         let model = exploreDataSources[indexPath.section] as! ExploreModel
         if indexPath.row == 0 {
+            let shopDetailVC = ShopDetailViewController()
+            shopDetailVC.model = model.shops![indexPath.row]
+            navigationController?.pushViewController(shopDetailVC, animated: true)
             return
         }
         
@@ -113,6 +116,9 @@ class ExploreViewController: BaseViewController ,UITableViewDelegate, UITableVie
                 ["themes":ThemesModel.self, "shops": ShopsModel.self]
             })
             
+            ShopsModel.mj_setupObjectClassInArray({ () -> [NSObject : AnyObject]! in
+                ["more": MoreModel.self]
+            })
             // 转模型
             let dataArray = ExploreModel.mj_objectArrayWithKeyValuesArray(responseObject["list"])
             self.exploreDataSources.addObjectsFromArray(dataArray as [AnyObject])

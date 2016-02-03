@@ -47,25 +47,27 @@ class ChoiceWebViewController: UIViewController,WKNavigationDelegate {
     func shareMessage() {
         print("分享")
         
-        if self.backView == nil {
-            let backView = BackView(frame: UIScreen.mainScreen().bounds, target: self, action: "processTopBackView")
-            view.addSubview(backView)
-            self.backView = backView
-        }
+        self.addBlackBackGroundViewAndShareView(UIScreen.mainScreen().bounds, target: self, action: "processTopBackView")
         
-        if self.shareView == nil {
-            let shareView = ShareView.shareViewWithXib()
-            shareView.frame.size.width = KmainScreenW
-            shareView.frame.origin.y = KmainScreenH
-            self.shareView = shareView
-
-            shareView.hiddenShareView = { () -> Void in
-                print("hiddenShareView")
-                self.backView?.canalAlpha()
-            }
-        }
-        view.addSubview(self.shareView!)
-        self.shareView?.showShareView()
+//        if self.backView == nil {
+//            let backView = BackView(frame: UIScreen.mainScreen().bounds, target: self, action: "processTopBackView")
+//            view.addSubview(backView)
+//            self.backView = backView
+//        }
+//        
+//        if self.shareView == nil {
+//            let shareView = ShareView.shareViewWithXib()
+//            shareView.frame.size.width = KmainScreenW
+//            shareView.frame.origin.y = KmainScreenH
+//            self.shareView = shareView
+//
+//            shareView.hiddenShareView = { () -> Void in
+//                print("hiddenShareView")
+//                self.backView?.canalAlpha()
+//            }
+//        }
+//        view.addSubview(self.shareView!)
+//        self.shareView?.showShareView()
     }
     
     //  MARK: collectionMessage 搜藏
@@ -118,7 +120,6 @@ class ChoiceWebViewController: UIViewController,WKNavigationDelegate {
 
     /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
