@@ -131,10 +131,11 @@ extension UIButton {
 
 extension UIViewController {
     
-    func addBlackBackGroundViewAndShareView(blackViewFrame: CGRect, target: AnyObject, action: Selector) {
+    func addBlackBackGroundViewAndShareView(blackViewFrame: CGRect, target: AnyObject, action: Selector, blackBackView: BackView, shareView: ShareView) {
         // 黑色背景
         let backView = BackView(frame: blackViewFrame, target: target, action: action)
         view.addSubview(backView)
+//        blackBackView = backView
         
         // 分享视图
         let shareView = ShareView.shareViewWithXib()

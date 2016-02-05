@@ -11,15 +11,16 @@ import UIKit
 /// 精选主页model
 class ChoiceListModel: BaseModel {
     
- /// id
+    /// id
     var uid: String?
     
- /// 类型
+    /// 类型
     var theme_type: String?
 
     /// 内容详细的url地址
     var theme_url: String?
 }
+
 
 /// 精选  每天 model
 class ChoiceDetailModel : NSObject {
