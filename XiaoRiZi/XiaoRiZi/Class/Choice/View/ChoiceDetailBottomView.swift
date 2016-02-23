@@ -25,7 +25,6 @@ class ChoiceDetailBottomView: UIButton {
             tagLbl?.text = "文." + (model?.tag)!
             img?.downLoadImage((model?.img)!)
             
-            
             // 调整子视图的位置
             let padding: CGFloat = Kpadding / 2
             let imgW: CGFloat = bounds.height - padding

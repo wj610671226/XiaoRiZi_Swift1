@@ -72,6 +72,7 @@ extension WeekDetailViewController: WKNavigationDelegate {
         print("结束加载")
         print(webView.scrollView.contentSize.height)
         weak var weakWebView:WKWebView? = webView
+        // 获取webView滚动的高度
         webView.evaluateJavaScript("document.body.offsetHeight") { (obj:AnyObject?, error: NSError?) -> Void in
             print("obj = \(obj), error = \(error)")
             

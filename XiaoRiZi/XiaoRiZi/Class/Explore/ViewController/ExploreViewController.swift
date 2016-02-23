@@ -14,7 +14,7 @@ class ExploreViewController: BaseViewController ,UITableViewDelegate, UITableVie
     private weak var exploreTableView: UITableView?
     
     /// 数据源
-    private  lazy var exploreDataSources: NSMutableArray = NSMutableArray()
+    private lazy var exploreDataSources: NSMutableArray = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()

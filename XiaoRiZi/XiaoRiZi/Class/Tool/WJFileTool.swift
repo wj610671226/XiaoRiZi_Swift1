@@ -14,7 +14,7 @@ class WJFileTool: NSObject {
     /**
      计算单个文件的大小
      */
-    static func getSingleCacheFileSize(filePath: String) -> Double{
+    static func getSingleCacheFileSize(filePath: String) -> Double {
         // 查找文件是否存在
         if fileManager.fileExistsAtPath(filePath) {
             // 计算文件大小

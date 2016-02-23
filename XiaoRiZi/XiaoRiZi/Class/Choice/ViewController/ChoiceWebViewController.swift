@@ -126,5 +126,4 @@ class ChoiceWebViewController: UIViewController,WKNavigationDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

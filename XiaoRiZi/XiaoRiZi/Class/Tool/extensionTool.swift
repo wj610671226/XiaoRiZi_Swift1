@@ -78,7 +78,6 @@ extension UIImageView {
      - parameter imageName:            图片名字
      */
     func downLoadImage(imageName: String) {
-//        self.downLoadImage(imageName, placeholderImageName: "")
         self.sd_setImageWithURL(NSURL(string: imageName))
     }
 }

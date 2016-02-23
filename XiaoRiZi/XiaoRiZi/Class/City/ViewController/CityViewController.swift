@@ -96,7 +96,6 @@ class CityViewController: BaseViewController , UICollectionViewDelegate, UIColle
         } else {
             cell.cityLabel.textColor = UIColor.blackColor()
         }
-        
         return cell
     }
 
